@@ -18,6 +18,7 @@
 
     <div id="google_translate_element" style="display: none;"></div>
 
+    <!-- Portrait Orientation Notice -->
     <div id="portrait-notice" class="portrait-overlay">
         <div class="notice-content">
             <div class="rotate-icon-wrapper">
@@ -28,6 +29,16 @@
             <p>Situs TerraShift dirancang untuk tampilan Landscape. Mohon ubah orientasi layar perangkat Anda untuk melanjutkan.</p>
         </div>
     </div>
+
+    <!-- Background Video & Overlay Layer -->
+    <div class="media-bg-container">
+        <div class="media-overlay"></div>
+        <video class="bg-video" autoplay loop muted playsinline poster="assets/LandingTN.jpeg">
+            <source src="assets/LandingVid.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
 
     <div class="main-wrapper">
         <header class="navbar-container">
@@ -69,28 +80,30 @@
             </nav>
         </header>
 
-        <!-- Main Landing Content -->
+        <!-- Main Content -->
         <main class="hero-landing">
-            <div class="glow-sphere sphere-1"></div>
-            <div class="glow-sphere sphere-2"></div>
 
-            <section class="hero-header">
+            <section class="hero-header parallax-layer" data-speed="0.015">
                 <h1 class="brand-title">TerraShift</h1>
                 <p class="hero-quote">
                     "Bumi tidak memperhitungkan apa yang kita ambil, tetapi menanggung semua beban dari apa yang kita tinggalkan."
                 </p>
             </section>
 
+            <!-- Topic Cards Section -->
             <section class="cards-container">
                 <!-- Card 1: Pemanasan Global -->
                 <a href="../globalwarm/glowarm.html" class="paper-card card-globalwarm">
                     <div class="card-glow"></div>
                     <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fa-solid fa-temperature-arrow-up"></i>
+                        <div class="card-image-wrapper">
+                            <img src="assets/Globalwarm.jpeg" alt="Pemanasan Global" class="card-img" />
+                            <div class="card-icon-floating">
+                                <i class="fa-solid fa-temperature-arrow-up"></i>
+                            </div>
                         </div>
                         <h3>Pemanasan Global</h3>
-                        <p>Telusuri bagaimana lonjakan suhu global mengubah ritme dan keseimbangan iklim planet kita.</p>
+                        <p class="card-text">Telusuri bagaimana lonjakan suhu global mengubah ritme dan keseimbangan iklim planet kita.</p>
                         <span class="card-action">Jelajahi Simulasi <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </a>
@@ -99,11 +112,14 @@
                 <a href="../deforest/deforest.html" class="paper-card card-deforest">
                     <div class="card-glow"></div>
                     <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fa-solid fa-tree"></i>
+                        <div class="card-image-wrapper">
+                            <img src="assets/Deforestation.jpeg" alt="Deforestasi" class="card-img" />
+                            <div class="card-icon-floating">
+                                <i class="fa-solid fa-tree"></i>
+                            </div>
                         </div>
                         <h3>Deforestasi</h3>
-                        <p>Amati dampak hilangnya tutupan hutan tropis terhadap paru-paru dunia dan keanekaragaman hayati.</p>
+                        <p class="card-text">Amati serta rasakan dampak hilangnya tutupan hutan tropis terhadap paru-paru dunia dan keanekaragaman hayati.</p>
                         <span class="card-action">Jelajahi Simulasi <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </a>
@@ -112,11 +128,14 @@
                 <a href="../oceanacid/oceanacid.html" class="paper-card card-oceanacid">
                     <div class="card-glow"></div>
                     <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fa-solid fa-water"></i>
+                        <div class="card-image-wrapper">
+                            <img src="assets/Oceanacid.jpeg" alt="Pengasaman Laut" class="card-img" />
+                            <div class="card-icon-floating">
+                                <i class="fa-solid fa-water"></i>
+                            </div>
                         </div>
                         <h3>Pengasaman Laut</h3>
-                        <p>Pelajari ancaman perubahan kimia samudra yang membahayakan terumbu karang dan biota laut.</p>
+                        <p class="card-text">Pelajari ancaman perubahan kimia samudra yang membahayakan terumbu karang dan biota laut.</p>
                         <span class="card-action">Jelajahi Simulasi <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </a>
@@ -128,6 +147,7 @@
         </footer>
     </div>
 
+    <!-- Scripts -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -140,6 +160,7 @@
     <script type="text/javascript"
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="navbar.js"></script>
+    <script src="landing.js"></script>
 </body>
 
 </html>
