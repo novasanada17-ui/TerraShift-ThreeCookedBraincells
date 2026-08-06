@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TerraShift - Navbar Component</title>
+    <title>TerraShift - Pemanasan Global</title>
     <link rel="stylesheet" href="navbar2.css" />
+    <link rel="stylesheet" href="glowarm.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script>
         const savedTheme = localStorage.getItem('terrashift_theme') || 'dark';
@@ -24,7 +25,8 @@
                 <i class="fa-solid fa-rotate-right rotate-arrow"></i>
             </div>
             <h2>Putar Perangkat Anda</h2>
-            <p>Situs TerraShift dirancang untuk tampilan Landscape. Mohon ubah orientasi layar perangkat Anda untuk melanjutkan.</p>
+            <p>Situs TerraShift dirancang untuk tampilan Landscape. Mohon ubah orientasi layar perangkat Anda untuk
+                melanjutkan.</p>
         </div>
     </div>
 
@@ -33,12 +35,12 @@
             <nav class="navbar">
 
                 <div class="nav-brand">
-                    <a href="landing.html" class="logo">TerraShift</a>
+                    <a href="../landing/landing.html" class="logo">TerraShift</a>
                 </div>
 
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="landing.html" class="nav-link">Home</a>
+                        <a href="../landing/landing.html" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="glowarm.html" class="nav-link active">Pemanasan Global</a>
@@ -69,12 +71,88 @@
             </nav>
         </header>
 
-        <main class="content-body">
-            <section id="demo-content">
-                <h1 id="content-title">Pemanasan Global</h1>
-                <p id="content-text">Halaman ini menampilkan informasi mendalam mengenai tren kenaikan suhu global dan
-                    dampaknya terhadap ekosistem bumi.</p>
-            </section>
+        <section class="parallax-hero" id="parallaxHero">
+            <div class="parallax-layer layer-1-sky">
+                <video autoplay loop muted playsinline class="sky-video">
+                    <source src="../assets/video/b683697767776fbccf01acc2675f777e.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video HTML5.
+                </video>
+            </div>
+
+            <div class="parallax-layer layer-2-sunglow">
+                <div class="sun-orb">
+                    <div class="sun-inner"></div>
+                </div>
+            </div>
+
+            <div class="parallax-layer layer-text-title" id="layerTitle">
+                <h1 class="hero-title">
+                    PEMANASAN<br>
+                    <span class="highlight-global">GLOBAL</span>
+                </h1>
+            </div>
+
+            <div class="parallax-layer layer-3-silhouette"></div>
+
+            <div class="parallax-layer layer-text-desc" id="layerDesc">
+                <p class="hero-description">
+                    Ancaman nyata peningkatan suhu bumi akibat akumulasi gas rumah kaca yang memicu krisis iklim global
+                    secara massif.
+                </p>
+            </div>
+
+            <div class="parallax-layer layer-4-foreground">
+                <div class="foreground-cut"></div>
+                <div class="transition-blur-edge"></div>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT DENGAN SLIDER & GAMBAR INTERAKTIF -->
+        <main class="content-body" id="mainContent">
+            <div class="interactive-section">
+                
+                <!-- Judul & Deskripsi Main Content (Tetap) -->
+                <h2 class="section-title">TerraShift</h2>
+                <p class="section-desc">Ancaman nyata peningkatan suhu bumi akibat akumulasi gas rumah kaca.</p>
+
+                <!-- Efek Glow Lengkungan Setengah Lingkaran -->
+                <div class="arc-glow-wrapper">
+                    <div class="arc-glow-circle"></div>
+                </div>
+
+                <!-- Kontrol Range Slider & Reset -->
+                <div class="slider-control-container" id="sliderContainer">
+                    <div class="slider-wrapper">
+                        <input type="range" id="tempSlider" min="0" max="2" value="0" step="1">
+                        <span class="slider-tooltip" id="sliderTooltip">2026</span>
+                    </div>
+                    <button class="reset-btn" id="resetBtn">Reset</button>
+                </div>
+
+                <!-- Gambar Interaktif di Bawah Slider (Beranimasi Putar) -->
+                <div class="display-image-container">
+                    <div class="image-flipper" id="imageFlipper">
+                        <img src="../assets/images/slider-1.jpg" alt="Visualisasi Dampak" id="sliderImage" class="slider-img">
+                    </div>
+                </div>
+
+                <!-- Grid 3 Kartu Pilihan -->
+                <div class="cards-grid">
+                    <div class="interactive-card active" data-index="0">
+                        <div class="card-glow"></div>
+                        <h3>Proyeksi Suhu</h3>
+                    </div>
+                    <div class="interactive-card" data-index="1">
+                        <div class="card-glow"></div>
+                        <h3>Kenaikan Laut</h3>
+                    </div>
+                    <div class="interactive-card" data-index="2">
+                        <div class="card-glow"></div>
+                        <h3>Dampak Ekosistem</h3>
+                    </div>
+                </div>
+
+            </div>
         </main>
     </div>
 
@@ -91,6 +169,7 @@
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="navbar2.js"></script>
+    <script src="glowarm.js"></script>
 </body>
 
 </html>
