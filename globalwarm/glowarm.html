@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraShift - Navbar Component</title>
+    <link rel="stylesheet" href="navbar2.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script>
+        const savedTheme = localStorage.getItem('terrashift_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <div id="portrait-notice" class="portrait-overlay">
+        <div class="notice-content">
+            <div class="rotate-icon-wrapper">
+                <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+                <i class="fa-solid fa-rotate-right rotate-arrow"></i>
+            </div>
+            <h2>Putar Perangkat Anda</h2>
+            <p>Situs TerraShift dirancang untuk tampilan Landscape. Mohon ubah orientasi layar perangkat Anda untuk melanjutkan.</p>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <header class="navbar-container">
+            <nav class="navbar">
+
+                <div class="nav-brand">
+                    <a href="landing.html" class="logo">TerraShift</a>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="landing.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="glowarm.html" class="nav-link active">Pemanasan Global</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="deforestasi.html" class="nav-link">Deforestasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pengasaman-laut.html" class="nav-link">Pengasaman Laut</a>
+                    </li>
+                </ul>
+
+                <div class="nav-controls">
+
+                    <div class="lang-switcher notranslate" id="langSwitcher" data-selected="id" translate="no">
+                        <div class="lang-glider" id="langGlider"></div>
+                        <button class="lang-btn active notranslate" data-lang="id" translate="no">ID</button>
+                        <button class="lang-btn notranslate" data-lang="en" translate="no">EN</button>
+                    </div>
+
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun icon-sun"></i>
+                        <i class="fa-solid fa-moon icon-moon"></i>
+                        <div class="theme-slider" id="themeSlider"></div>
+                    </button>
+
+                </div>
+            </nav>
+        </header>
+
+        <main class="content-body">
+            <section id="demo-content">
+                <h1 id="content-title">Pemanasan Global</h1>
+                <p id="content-text">Halaman ini menampilkan informasi mendalam mengenai tren kenaikan suhu global dan
+                    dampaknya terhadap ekosistem bumi.</p>
+            </section>
+        </main>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="navbar2.js"></script>
+</body>
+
+</html>
