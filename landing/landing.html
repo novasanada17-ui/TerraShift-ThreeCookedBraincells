@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraShift - See the Changes</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="landing.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script>
+        const savedTheme = localStorage.getItem('terrashift_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <div id="portrait-notice" class="portrait-overlay">
+        <div class="notice-content">
+            <div class="rotate-icon-wrapper">
+                <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+                <i class="fa-solid fa-rotate-right rotate-arrow"></i>
+            </div>
+            <h2>Putar Perangkat Anda</h2>
+            <p>Situs TerraShift dirancang untuk tampilan Landscape. Mohon ubah orientasi layar perangkat Anda untuk melanjutkan.</p>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <header class="navbar-container">
+            <nav class="navbar">
+
+                <div class="nav-brand">
+                    <a href="../landing/landing.html" class="logo">TerraShift</a>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../landing/landing.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../globalwarm/glowarm.html" class="nav-link">Pemanasan Global</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../deforest/deforest.html" class="nav-link">Deforestasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../oceanacid/oceanacid.html" class="nav-link">Pengasaman Laut</a>
+                    </li>
+                </ul>
+
+                <div class="nav-controls">
+                    <div class="lang-switcher notranslate" id="langSwitcher" data-selected="id" translate="no">
+                        <div class="lang-glider" id="langGlider"></div>
+                        <button class="lang-btn active notranslate" data-lang="id" translate="no">ID</button>
+                        <button class="lang-btn notranslate" data-lang="en" translate="no">EN</button>
+                    </div>
+
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun icon-sun"></i>
+                        <i class="fa-solid fa-moon icon-moon"></i>
+                        <div class="theme-slider" id="themeSlider"></div>
+                    </button>
+                </div>
+
+            </nav>
+        </header>
+
+        <!-- Main Landing Content -->
+        <main class="hero-landing">
+            <div class="glow-sphere sphere-1"></div>
+            <div class="glow-sphere sphere-2"></div>
+
+            <section class="hero-header">
+                <h1 class="brand-title">TerraShift</h1>
+                <p class="hero-quote">
+                    "Bumi tidak memperhitungkan apa yang kita ambil, tetapi menanggung semua beban dari apa yang kita tinggalkan."
+                </p>
+            </section>
+
+            <section class="cards-container">
+                <!-- Card 1: Pemanasan Global -->
+                <a href="../globalwarm/glowarm.html" class="paper-card card-globalwarm">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-temperature-arrow-up"></i>
+                        </div>
+                        <h3>Pemanasan Global</h3>
+                        <p>Telusuri bagaimana lonjakan suhu global mengubah ritme dan keseimbangan iklim planet kita.</p>
+                        <span class="card-action">Jelajahi Simulasi <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 2: Deforestasi -->
+                <a href="../deforest/deforest.html" class="paper-card card-deforest">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <h3>Deforestasi</h3>
+                        <p>Amati dampak hilangnya tutupan hutan tropis terhadap paru-paru dunia dan keanekaragaman hayati.</p>
+                        <span class="card-action">Jelajahi Simulasi <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 3: Pengasaman Laut -->
+                <a href="../oceanacid/oceanacid.html" class="paper-card card-oceanacid">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <h3>Pengasaman Laut</h3>
+                        <p>Pelajari ancaman perubahan kimia samudra yang membahayakan terumbu karang dan biota laut.</p>
+                        <span class="card-action">Jelajahi Simulasi <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </section>
+        </main>
+
+        <footer class="landing-footer">
+            <p>@TerraShift. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="navbar.js"></script>
+</body>
+
+</html>

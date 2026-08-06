@@ -1,0 +1,233 @@
+:root {
+  --space-cadet: #1e293b;
+  --slate-gray: #475569;
+  --caput-mortuum: #592321;
+  --earth-tan: #d97706;
+  --ocean-blue: #0284c7;
+  --forest-green: #10b981;
+}
+
+.hero-landing {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+.glow-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.sphere-1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, var(--accent-color), transparent);
+  top: -10%;
+  left: 15%;
+}
+
+.sphere-2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, var(--ocean-blue), transparent);
+  bottom: 0%;
+  right: 10%;
+}
+
+/* Hero Title & Quote Section */
+.hero-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 3.5rem;
+}
+
+.brand-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--text-main) 30%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.2));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 25px rgba(2, 132, 199, 0.4));
+  }
+}
+
+.hero-quote {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 400;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Cards Container Grid */
+.cards-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Paper Card Styling */
+.paper-card {
+  position: relative;
+  background-color: var(--card-bg);
+  border: 1px solid var(--nav-border);
+  border-radius: 20px;
+  padding: 2.2rem 1.8rem;
+  text-decoration: none;
+  color: var(--text-main);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-globalwarm .card-glow {
+  background: radial-gradient(circle at top right, rgba(217, 119, 6, 0.15), transparent 70%);
+}
+
+.card-deforest .card-glow {
+  background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 70%);
+}
+
+.card-oceanacid .card-glow {
+  background: radial-gradient(circle at top right, rgba(2, 132, 199, 0.15), transparent 70%);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: var(--accent-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card-globalwarm .card-icon {
+  color: var(--earth-tan);
+}
+
+.card-deforest .card-icon {
+  color: var(--accent-color);
+}
+
+.card-oceanacid .card-icon {
+  color: var(--ocean-blue);
+}
+
+.card-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.card-action {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card-action i {
+  transition: transform 0.3s ease;
+}
+
+/* Card Hover */
+.paper-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px var(--shadow-color);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] .paper-card:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.paper-card:hover .card-glow {
+  opacity: 1;
+}
+
+.paper-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.paper-card:hover .card-action {
+  color: var(--accent-color);
+}
+
+.paper-card:hover .card-action i {
+  transform: translateX(5px);
+}
+
+/* Footer */
+.landing-footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--nav-border);
+  margin-top: auto;
+}
