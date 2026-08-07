@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const domain = window.location.hostname;
     const path = '/';
     document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${path};`;
-    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${path}; domain=${domain};`;
-    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${path}; domain=.${domain};`;
+    if (domain) {
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${path}; domain=${domain};`;
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${path}; domain=.${domain};`;
+    }
   }
 
   function setGoogleTranslateCookie(lang) {
@@ -30,9 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
     clearGoogleTranslateCookie();
 
     if (lang !== 'id') {
-      document.cookie = `googtrans=${cookieValue}; path=${path};`;
-      if (domain) {
-        document.cookie = `googtrans=${cookieValue}; path=${path}; domain=${domain};`;
+      const date = new Date();
+      date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = `googtrans=${cookieValue}; ${expires}; path=${path};`;
+      if (domain && domain !== 'localhost' && domain !== '127.0.0.1') {
+        document.cookie = `googtrans=${cookieValue}; ${expires}; path=${path}; domain=${domain};`;
+        document.cookie = `googtrans=${cookieValue}; ${expires}; path=${path}; domain=.${domain};`;
       }
     }
 
@@ -58,9 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
     savedLang = 'id';
     localStorage.setItem('terrashift_lang', 'id');
     clearGoogleTranslateCookie();
+  } else {
+    setGoogleTranslateCookie(savedLang);
   }
 
   applyLanguageUI(savedLang);
+
+  setTimeout(() => {
+    const googleSelect = document.querySelector('.goog-te-combo');
+    if (savedLang !== 'id' && googleSelect && googleSelect.value !== savedLang) {
+      googleSelect.value = savedLang;
+      googleSelect.dispatchEvent(new Event('change'));
+    }
+  }, 500); 
 
   function triggerGoogleTranslate(targetLang) {
     setGoogleTranslateCookie(targetLang);
@@ -72,9 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetLang === 'id') {
         googleSelect.value = '';
         googleSelect.dispatchEvent(new Event('change'));
-        setTimeout(() => {
-          window.location.reload();
-        }, 100);
+        // Reload agak dicepatkan
+        setTimeout(() => window.location.reload(), 150);
       } else {
         googleSelect.value = targetLang;
         googleSelect.dispatchEvent(new Event('change'));
@@ -87,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   langBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const selectedLang = e.currentTarget.getAttribute('data-lang');
-      if (selectedLang) {
+      if (selectedLang && selectedLang !== localStorage.getItem('terrashift_lang')) {
         triggerGoogleTranslate(selectedLang);
       }
     });

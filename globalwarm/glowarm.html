@@ -7,6 +7,7 @@
     <title>TerraShift - Pemanasan Global</title>
     <link rel="stylesheet" href="navbar2.css" />
     <link rel="stylesheet" href="glowarm.css" />
+    <link rel="stylesheet" href="glowarmcontent.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script>
         const savedTheme = localStorage.getItem('terrashift_theme') || 'dark';
@@ -74,7 +75,7 @@
         <section class="parallax-hero" id="parallaxHero">
             <div class="parallax-layer layer-1-sky">
                 <video autoplay loop muted playsinline class="sky-video">
-                    <source src="../assets/video/b683697767776fbccf01acc2675f777e.mp4" type="video/mp4">
+                    <source src="assets/video/bg.mp4" type="video/mp4">
                     Browser Anda tidak mendukung video HTML5.
                 </video>
             </div>
@@ -96,8 +97,8 @@
 
             <div class="parallax-layer layer-text-desc" id="layerDesc">
                 <p class="hero-description">
-                    Ancaman nyata peningkatan suhu bumi akibat akumulasi gas rumah kaca yang memicu krisis iklim global
-                    secara massif.
+                    Setiap derajat kenaikan suhu bumi adalah jejak langkah kita. Ketika iklim bergeser, pilihan kita
+                    hari ini menentukan napas dunia esok hari.
                 </p>
             </div>
 
@@ -106,55 +107,89 @@
                 <div class="transition-blur-edge"></div>
             </div>
         </section>
+    </div>
 
-        <!-- MAIN CONTENT DENGAN SLIDER & GAMBAR INTERAKTIF -->
-        <main class="content-body" id="mainContent">
-            <div class="interactive-section">
-                
-                <!-- Judul & Deskripsi Main Content (Tetap) -->
-                <h2 class="section-title">TerraShift</h2>
-                <p class="section-desc">Ancaman nyata peningkatan suhu bumi akibat akumulasi gas rumah kaca.</p>
+    <main class="content-body" id="mainContent">
+        <div class="content-video-bg-wrapper">
+            <video autoplay loop muted playsinline id="contentBgVideo" class="content-bg-video">
+                <source src="assets/video/bg2.mp4" type="video/mp4" id="videoSource">
+                Browser Anda tidak mendukung video HTML5.
+            </video>
+            <div class="content-video-overlay" id="contentVideoOverlay"></div>
+        </div>
+        <div class="temp-visualization-wrapper">
+            <div class="temp-header scroll-reveal scroll-reveal-delay-1">
+                <h2 class="temp-title">Visualisasi Perubahan Suhu Bumi</h2>
+                <p class="temp-subtitle">
+                    Simulasi interaktif tren peningkatan rata-rata suhu global (°C) terhadap era pra-industri beserta
+                    estimasi dampaknya hingga tahun 2100.
+                </p>
+            </div>
 
-                <!-- Efek Glow Lengkungan Setengah Lingkaran -->
-                <div class="arc-glow-wrapper">
-                    <div class="arc-glow-circle"></div>
+            <div class="slider-control-container scroll-reveal scroll-reveal-delay-2">
+                <div class="slider-track-wrapper">
+                    <div class="floating-tooltip" id="floatingTooltip">
+                        <span class="tooltip-year" id="tooltipYear">Kondisi Saat Ini</span>
+                    </div>
+                    <input type="range" id="tempRangeSlider" min="0" max="2" value="1" step="1">
+
+                    <div class="slider-stops">
+                        <span class="stop-point" data-value="0">0.0°C</span>
+                        <span class="stop-point active" data-value="1">+1.2°C</span>
+                        <span class="stop-point" data-value="2">+4.0°C ~ +6.0°C</span>
+                    </div>
                 </div>
 
-                <!-- Kontrol Range Slider & Reset -->
-                <div class="slider-control-container" id="sliderContainer">
-                    <div class="slider-wrapper">
-                        <input type="range" id="tempSlider" min="0" max="2" value="0" step="1">
-                        <span class="slider-tooltip" id="sliderTooltip">2026</span>
-                    </div>
-                    <button class="reset-btn" id="resetBtn">Reset</button>
-                </div>
+                <button class="reset-btn" id="resetBtn">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </button>
+            </div>
 
-                <!-- Gambar Interaktif di Bawah Slider (Beranimasi Putar) -->
-                <div class="display-image-container">
-                    <div class="image-flipper" id="imageFlipper">
-                        <img src="../assets/images/slider-1.jpg" alt="Visualisasi Dampak" id="sliderImage" class="slider-img">
-                    </div>
-                </div>
+            <div class="visual-display-container notranslate scroll-reveal scroll-reveal-delay-2" translate="no">
+                <div class="earth-carousel-box">
 
-                <!-- Grid 3 Kartu Pilihan -->
-                <div class="cards-grid">
-                    <div class="interactive-card active" data-index="0">
-                        <div class="card-glow"></div>
-                        <h3>Proyeksi Suhu</h3>
+                    <button class="carousel-btn prev-btn" id="prevSubBtn" aria-label="Sebelumnya">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="earth-3d-wrapper ">
+                        <img src="assets/images/now.png" id="earthImg" alt="Kondisi Bumi" class="earth-image">
+                        <div class="image-overlay-info">
+                            <span class="badge-era" id="badgeEra">Kondisi Visual Global Saat Ini</span>
+                        </div>
                     </div>
-                    <div class="interactive-card" data-index="1">
-                        <div class="card-glow"></div>
-                        <h3>Kenaikan Laut</h3>
-                    </div>
-                    <div class="interactive-card" data-index="2">
-                        <div class="card-glow"></div>
-                        <h3>Dampak Ekosistem</h3>
-                    </div>
+
+                    <button class="carousel-btn next-btn" id="nextSubBtn" aria-label="Selanjutnya">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="sync-cards-container scroll-reveal scroll-reveal-delay-3" id="syncCardsContainer">
+                <div class="temp-card">
+                    <div class="card-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <h3 class="card-title">Penjelasan Kondisi</h3>
+                    <p class="card-desc" id="cardDescDetail">Loading...</p>
+                </div>
+                <div class="temp-card">
+                    <div class="card-icon"><i class="fa-solid fa-smog"></i></div>
+                    <h3 class="card-title">Penyebab Utama</h3>
+                    <p class="card-desc" id="cardDescCause">Loading...</p>
+                </div>
+                <div class="temp-card">
+                    <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3 class="card-title">Cara Mengatasi</h3>
+                    <p class="card-desc" id="cardDescAction">Loading...</p>
                 </div>
 
             </div>
-        </main>
-    </div>
+
+            <footer class="landing-footer">
+                <p>@TerraShift. All rights reserved.</p>
+            </footer>
+        </div>
+    </main>
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -167,9 +202,9 @@
     </script>
     <script type="text/javascript"
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
     <script src="navbar2.js"></script>
     <script src="glowarm.js"></script>
+    <script src="glowarmcontent.js"></script>
 </body>
 
 </html>

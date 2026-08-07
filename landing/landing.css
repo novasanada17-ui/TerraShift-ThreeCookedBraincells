@@ -55,7 +55,7 @@
 }
 
 [data-theme="light"] .paper-card {
-  background: rgba(230, 230, 230, 0.758);
+  background: rgba(255, 248, 248, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
