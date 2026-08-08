@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraShift - Deforestasi</title>
+    <link rel="stylesheet" href="../globalwarm/navbar2.css" />
+    <link rel="stylesheet" href="deforest.css" />
+    <link rel="stylesheet" href="deforestcontent.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script>
+        const savedTheme = localStorage.getItem('terrashift_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <div id="portrait-notice" class="portrait-overlay">
+        <div class="notice-content">
+            <div class="rotate-icon-wrapper">
+                <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+                <i class="fa-solid fa-rotate-right rotate-arrow"></i>
+            </div>
+            <h2>Putar Perangkat Anda</h2>
+            <p>Situs TerraShift dirancang untuk tampilan Landscape. Mohon ubah orientasi layar perangkat Anda untuk
+                melanjutkan.</p>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <header class="navbar-container">
+            <nav class="navbar">
+
+                <div class="nav-brand">
+                    <a href="../landing/landing.html" class="logo">TerraShift</a>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../landing/landing.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../globalwarm/glowarm.html" class="nav-link">Pemanasan Global</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="deforest.html" class="nav-link active">Deforestasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../oceanacid/oceanacid.html" class="nav-link">Pengasaman Laut</a>
+                    </li>
+                </ul>
+
+                <div class="nav-controls">
+
+                    <div class="lang-switcher notranslate" id="langSwitcher" data-selected="id" translate="no">
+                        <div class="lang-glider" id="langGlider"></div>
+                        <button class="lang-btn active notranslate" data-lang="id" translate="no">ID</button>
+                        <button class="lang-btn notranslate" data-lang="en" translate="no">EN</button>
+                    </div>
+
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-sun icon-sun"></i>
+                        <i class="fa-solid fa-moon icon-moon"></i>
+                        <div class="theme-slider" id="themeSlider"></div>
+                    </button>
+
+                </div>
+            </nav>
+        </header>
+
+        <section class="parallax-hero" id="parallaxHero">
+            <div class="parallax-layer layer-1-sky">
+                <video autoplay loop muted playsinline class="sky-video">
+                    <source src="assets/video/bg.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video HTML5.
+                </video>
+            </div>
+
+            <div class="parallax-layer layer-2-sunglow">
+                <div class="sun-orb">
+                    <div class="sun-inner"></div>
+                </div>
+            </div>
+
+            <div class="parallax-layer layer-text-title" id="layerTitle">
+                <h1 class="hero-title">
+                    KRISIS</br>
+                    <span class="highlight-global">DEFORESTASI</span>
+                </h1>
+            </div>
+
+            <div class="parallax-layer layer-3-silhouette"></div>
+
+            <div class="parallax-layer layer-text-desc" id="layerDesc">
+                <p class="hero-description">
+                    Setiap detik hektar hutan yang tumbang adalah hilangnya benteng terakhir paru-paru bumi.
+                    Langkah kita menata kembali vegetasi hijau menentukan keberlanjutan keanekaragaman hayati kita esok
+                    hari.
+                </p>
+            </div>
+
+            <div class="parallax-layer layer-4-foreground">
+                <div class="foreground-cut"></div>
+                <div class="transition-blur-edge"></div>
+            </div>
+        </section>
+    </div>
+
+    <main class="content-body" id="mainContent">
+        <div class="content-video-bg-wrapper">
+            <video autoplay loop muted playsinline id="contentBgVideo" class="content-bg-video">
+                <source src="assets/video/bg2.mp4" type="video/mp4" id="videoSource">
+                Browser Anda tidak mendukung video HTML5.
+            </video>
+            <div class="content-video-overlay" id="contentVideoOverlay"></div>
+        </div>
+        <div class="temp-visualization-wrapper">
+            <div class="temp-header scroll-reveal scroll-reveal-delay-1">
+                <h2 class="temp-title">Visualisasi Kehilangan Tutupan Hutan Global</h2>
+                <p class="temp-subtitle">
+                    Simulasi interaktif tingkat degradasi kanopi hutan, pembotakan lahan, dan estimasi dampaknya
+                    terhadap keanekaragaman hayati serta iklim hingga tahun 2100.
+                </p>
+            </div>
+
+            <div class="slider-control-container scroll-reveal scroll-reveal-delay-2">
+                <div class="slider-track-wrapper">
+                    <div class="floating-tooltip" id="floatingTooltip">
+                        <span class="tooltip-year" id="tooltipYear">Kondisi Saat Ini</span>
+                    </div>
+                    <input type="range" id="tempRangeSlider" min="0" max="2" value="1" step="1">
+
+                    <div class="slider-stops">
+                        <span class="stop-point" data-value="0">0%</span>
+                        <span class="stop-point active" data-value="1">32%</span>
+                        <span class="stop-point" data-value="2">75%</span>
+                    </div>
+                </div>
+
+                <button class="reset-btn" id="resetBtn">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </button>
+            </div>
+
+            <div class="visual-display-container notranslate scroll-reveal scroll-reveal-delay-2" translate="no">
+                <div class="earth-carousel-box">
+
+                    <button class="carousel-btn prev-btn" id="prevSubBtn" aria-label="Sebelumnya">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="earth-3d-wrapper">
+                        <img src="assets/images/now.png" id="earthImg" alt="Kondisi Hutan" class="earth-image">
+                        <div class="image-overlay-info">
+                            <span class="badge-era" id="badgeEra">Kondisi Visual Hutan Saat Ini</span>
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn next-btn" id="nextSubBtn" aria-label="Selanjutnya">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="sync-cards-container scroll-reveal scroll-reveal-delay-3" id="syncCardsContainer">
+                <div class="temp-card">
+                    <div class="card-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <h3 class="card-title">Penjelasan Kondisi</h3>
+                    <p class="card-desc" id="cardDescDetail">Loading...</p>
+                </div>
+                <div class="temp-card">
+                    <div class="card-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                    <h3 class="card-title">Penyebab Utama</h3>
+                    <p class="card-desc" id="cardDescCause">Loading...</p>
+                </div>
+                <div class="temp-card">
+                    <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h3 class="card-title">Cara Mengatasi</h3>
+                    <p class="card-desc" id="cardDescAction">Loading...</p>
+                </div>
+            </div>
+
+            <footer class="landing-footer">
+                <p>@TerraShift. All rights reserved.</p>
+            </footer>
+        </div>
+    </main>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="../globalwarm/navbar2.js"></script>
+    <script src="deforest.js"></script>
+    <script src="deforestcontent.js"></script>
+</body>
+
+</html>

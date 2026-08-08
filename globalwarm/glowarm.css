@@ -171,6 +171,7 @@
   letter-spacing: 4px;
   background: linear-gradient(180deg, #ffffff 20%, #f97316 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 
 }
