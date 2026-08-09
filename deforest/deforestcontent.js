@@ -34,19 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
       action: 'Menjaga kelestarian hutan adat, memberlakukan perlindungan mutlak bagi kawasan cagar alam primer, dan melarang konversi lahan lindung.',
       slides: [
         {
-          image: 'assets/images/past.png',
+          image: 'assets/images/forestbef.jpeg',
           captionId: 'Kondisi Visual Tutupan Hutan Global Era Pra-Industri',
           captionEn: 'Global Forest Cover Visual Conditions in Pre-Industrial Era'
         },
         {
-          image: 'assets/images/polepast.png',
-          captionId: 'Kerapatan Kanopi: Hutan hujan lebat dengan biodiversitas tinggi.<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: Global Forest Watch / NASA Canopy Assessment</small>',
-          captionEn: 'Canopy Density: Dense rainforest with rich biodiversity.<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: Global Forest Watch / NASA Canopy Assessment</small>'
+          image: 'assets/images/canopybef.jpeg',
+          captionId: 'Kerapatan Kanopi: Hutan hujan lebat dengan biodiversitas tinggi.<br><small style="opacity: 0.7; font-size: 0.8rem;"></small>',
+          captionEn: 'Canopy Density: Dense rainforest with rich biodiversity.<br><small style="opacity: 0.7; font-size: 0.8rem;"></small>'
         },
         {
-          image: 'assets/images/opast.png',
-          captionId: 'Hutan Amazon: Vegetasi hijau lebat tanpa fragmentasi lahan.<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: ESA Sentinel-2 / Landsat Historical Data</small>',
-          captionEn: 'Amazon Rainforest: Dense green vegetation without land fragmentation.<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: ESA Sentinel-2 / Landsat Historical Data</small>'
+          image: 'assets/images/amazonbef.jpeg',
+          captionId: 'Hutan Amazon: Vegetasi hijau lebat tanpa fragmentasi lahan.<br><small style="opacity: 0.7; font-size: 0.8rem;"></small>',
+          captionEn: 'Amazon Rainforest: Dense green vegetation without land fragmentation.<br><small style="opacity: 0.7; font-size: 0.8rem;"></small>'
         }
       ]
     },
@@ -57,22 +57,22 @@ document.addEventListener('DOMContentLoaded', () => {
       videoSrc: 'assets/video/bg2.mp4',
       detail: 'Lebih dari sepertiga tutupan hutan dunia telah hilang atau terdegradasi parah, memicu kepunahan spesies endemik dan mempercepat krisis iklim.',
       cause: 'Pembukaan lahan untuk perkebunan monokultur skala besar, pembalakan liar (illegal logging), serta pembakaran hutan tahunan.',
-      action: 'Penerapan morotarium izin tambang/sawit di hutan primer, penegakan hukum tegas terhadap pelaku pembakaran, dan reboisasi masif.',
+      action: 'Penerapan moratorium izin tambang/sawit di hutan primer, penegakan hukum tegas terhadap pelaku pembakaran, dan reboisasi masif.',
       slides: [
         {
-          image: 'assets/images/forestnow.jpg',
-          captionId: 'Kondisi Visual Tutupan Hutan Global Saat Ini',
-          captionEn: 'Current Global Forest Cover Visual Conditions'
+          image: 'assets/images/forestnow.jpeg', 
+          captionId: 'Peta Visualisasi Tutupan Hutan Global Saat Ini<br><small style="opacity: 0.8; font-size: 0.8rem;"></small>',
+          captionEn: 'Current Global Forest Cover Map Visualization<br><small style="opacity: 0.8; font-size: 0.8rem;"></small>'
         },
         {
-          image: 'assets/images/onow.png',
-          captionId: 'Kerapatan Kanopi: Terjadi fragmentasi lahan dan lahan pembotakan masif.<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: Global Forest Watch / NASA Landsat</small>',
-          captionEn: 'Canopy Density: Land fragmentation and massive deforestation observed.<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: Global Forest Watch / NASA Landsat</small>'
+          image: 'assets/images/canopynow.png',
+          captionId: 'Kerapatan Kanopi: Terjadi fragmentasi lahan dan pembotakan masif.<br><small style="opacity: 0.8; font-size: 0.8rem;"></small>',
+          captionEn: 'Canopy Density: Land fragmentation and massive deforestation observed.<br><small style="opacity: 0.8; font-size: 0.8rem;"></small>'
         },
         {
-          image: 'assets/images/polenow.png',
-          captionId: 'Hutan Amazon: Deforestasi terencana dan titik kebakaran lahan terpantau satelit.<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: INPE / NASA FIRMS Fire Data</small>',
-          captionEn: 'Amazon Rainforest: Planned deforestation and fire hotspots tracked by satellite.<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: INPE / NASA FIRMS Fire Data</small>'
+          image: 'assets/images/amazonnow.png',
+          captionId: 'Hutan Amazon & Tropis: Deforestasi dan titik kebakaran terdeteksi satelit.<br><small style="opacity: 0.8; font-size: 0.8rem;"></small>',
+          captionEn: 'Amazon & Tropical Forests: Deforestation and hotspots tracked by satellite.<br><small style="opacity: 0.8; font-size: 0.8rem;"></small>'
         }
       ]
     },
@@ -86,19 +86,19 @@ document.addEventListener('DOMContentLoaded', () => {
       action: 'Restorasi ekosistem darurat, perlindungan total sisa vegetasi alami, serta transisi ke komoditas pangan yang ramah hutan.',
       slides: [
         {
-          image: 'assets/images/then.png',
+          image: 'assets/images/forestthen.png',
           captionId: 'Kondisi Visual Deforestasi Kritis Skenario Terburuk (2100)',
           captionEn: 'Worst-Case Critical Deforestation Visual Scenario (2100)'
         },
         {
-          image: 'assets/images/othen.jpg',
-          captionId: 'Kerapatan Kanopi: Hutan gundul total memicu pembentukan gurun baru. (Prediksi)<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: IPBES / WWF Deforestation Fronts Model</small>',
-          captionEn: 'Canopy Density: Total deforestation triggers new desertification. (Prediction)<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: IPBES / WWF Deforestation Fronts Model</small>'
+          image: 'assets/images/canopythen.png',
+          captionId: 'Kerapatan Kanopi: Hutan gundul total memicu pembentukan gurun baru. (Prediksi)<br><small style="opacity: 0.7; font-size: 0.8rem;"></small>',
+          captionEn: 'Canopy Density: Total deforestation triggers new desertification. (Prediction)<br><small style="opacity: 0.7; font-size: 0.8rem;"></small>'
         },
         {
-          image: 'assets/images/polethen.jpg',
-          captionId: 'Hutan Amazon: Dieback Amazon, di mana vegetasi berubah menjadi lahan tandus. (Prediksi)<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: Earth System Dynamics / Potsdam Institute</small>',
-          captionEn: 'Amazon Rainforest: Amazon Dieback turning vegetation into barren land. (Prediction)<br><small style="opacity: 0.7; font-size: 0.8rem;">Credit: Earth System Dynamics / Potsdam Institute</small>'
+          image: 'assets/images/amazonthen.jpeg',
+          captionId: 'Hutan Amazon: Dieback Amazon, di mana vegetasi berubah menjadi lahan tandus. (Prediksi)<br><small style="opacity: 0.7; font-size: 0.8rem;"></small>',
+          captionEn: 'Amazon Rainforest: Amazon Dieback turning vegetation into barren land. (Prediction)<br><small style="opacity: 0.7; font-size: 0.8rem;"></small>'
         }
       ]
     }
