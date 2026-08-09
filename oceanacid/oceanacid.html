@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengasaman Laut | TerraShift</title>
+    <link rel="stylesheet" href="navbar2.css">
+    <link rel="stylesheet" href="oceanacid.css">
+    <link rel="stylesheet" href="oceanacidcontent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+<div id="google_translate_element" style="display:none;"></div>
+
+<div class="portrait-overlay">
+    <div class="notice-content">
+        <div class="rotate-icon-wrapper">
+            <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+            <i class="fa-solid fa-rotate rotate-arrow"></i>
+        </div>
+        <h2>Putar Perangkat Anda</h2>
+        <p>Untuk pengalaman terbaik, gunakan perangkat dalam mode landscape.</p>
+    </div>
+</div>
+
+<div class="main-wrapper">
+<header class="navbar-container">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../landing/landing.html" class="logo">TerraShift</a>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="../landing/landing.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="../globalwarm/glowarm.html" class="nav-link">Pemanasan Global</a>
+            </li>
+            <li class="nav-item">
+                <a href="../deforest/deforest.html" class="nav-link">Deforestasi</a>
+            </li>
+            <li class="nav-item">
+                <a href="oceanacid.html" class="nav-link active">Pengasaman Laut</a>
+            </li>
+        </ul>
+
+        <div class="nav-controls">
+            <div class="lang-switcher notranslate" id="langSwitcher" data-selected="id" translate="no">
+                <div class="lang-glider" id="langGlider"></div>
+                <button class="lang-btn active notranslate" data-lang="id" translate="no">ID</button>
+                <button class="lang-btn notranslate" data-lang="en" translate="no">EN</button>
+            </div>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <i class="fa-solid fa-sun icon-sun"></i>
+                <i class="fa-solid fa-moon icon-moon"></i>
+                <div class="theme-slider" id="themeSlider"></div>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<section class="parallax-hero" id="parallaxHero">
+    <div class="parallax-layer layer-1-sky">
+        <video autoplay loop muted playsinline class="sky-video">
+            <source src="assets/video/bg.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video HTML5.
+        </video>
+    </div>
+
+    <div class="parallax-layer layer-2-sunglow">
+        <div class="sun-orb">
+            <div class="sun-inner"></div>
+        </div>
+    </div>
+
+    <div class="parallax-layer layer-text-title" id="layerTitle">
+        <h1 class="hero-title">
+            PENGASAMAN<br>
+            <span class="highlight-global">LAUT</span>
+        </h1>
+    </div>
+
+    <div class="parallax-layer layer-3-silhouette"></div>
+
+    <div class="parallax-layer layer-text-desc" id="layerDesc">
+        <p class="hero-description">
+            Laut menyerap karbon dioksida dari atmosfer. Ketika kadar CO₂ meningkat, keseimbangan kimia laut berubah dan pH perlahan menurun, memengaruhi kehidupan di dalamnya.
+        </p>
+    </div>
+
+    <div class="parallax-layer layer-4-foreground">
+        <div class="foreground-cut"></div>
+        <div class="transition-blur-edge"></div>
+    </div>
+</section>
+
+<main id="mainContent" class="content-body">
+    <div class="content-video-bg-wrapper">
+        <video autoplay loop muted playsinline class="content-bg-video" id="contentBgVideo">
+            <source src="assets/video/bg2.mp4" type="video/mp4" id="videoSource">
+        </video>
+        <div class="content-video-overlay"></div>
+    </div>
+
+    <div class="temp-visualization-wrapper">
+        <div class="temp-header scroll-reveal scroll-reveal-delay-1">
+            <h2 class="temp-title">Perubahan pH Laut</h2>
+            <p class="temp-subtitle">
+                Geser slider untuk melihat perubahan kondisi laut ketika pH menurun akibat meningkatnya penyerapan karbon dioksida.
+            </p>
+        </div>
+
+        <div class="slider-control-container scroll-reveal scroll-reveal-delay-2">
+            <div class="slider-track-wrapper">
+                <div class="floating-tooltip notranslate" id="floatingTooltip" translate="no">
+                    <span class="tooltip-year" id="tooltipYear">Pengasaman Meningkat</span>
+                </div>
+
+                <input type="range" id="tempRangeSlider" min="0" max="2" value="1" step="1">
+
+                <div class="slider-stops notranslate" translate="no">
+                    <span class="stop-point" data-value="0">pH 8.2</span>
+                    <span class="stop-point active" data-value="1">pH 8.0</span>
+                    <span class="stop-point" data-value="2">pH 7.8</span>
+                </div>
+            </div>
+
+            <button class="reset-btn" id="resetBtn">
+                <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+        </div>
+
+        <div class="visual-display-container notranslate scroll-reveal scroll-reveal-delay-2" translate="no">
+            <div class="earth-carousel-box">
+                <button class="carousel-btn prev-btn" id="prevSubBtn" aria-label="Sebelumnya">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="earth-3d-wrapper ">
+                    <img src="assets/images/ocean80.png" id="earthImg" alt="Kondisi Laut" class="earth-image">
+                    <div class="image-overlay-info">
+                        <span class="badge-era" id="badgeEra">Kondisi Visual Laut pada pH 8.0</span>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" id="nextSubBtn" aria-label="Selanjutnya">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="sync-cards-container scroll-reveal scroll-reveal-delay-3 notranslate" id="syncCardsContainer" translate="no">
+            <div class="temp-card">
+                <div class="card-icon"><i class="fa-solid fa-circle-info"></i></div>
+                <h3 class="card-title" id="cardTitleDetail">Penjelasan Kondisi</h3>
+                <p class="card-desc" id="cardDescDetail">Loading...</p>
+            </div>
+
+            <div class="temp-card">
+                <div class="card-icon"><i class="fa-solid fa-smog"></i></div>
+                <h3 class="card-title" id="cardTitleCause">Penyebab Utama</h3>
+                <p class="card-desc" id="cardDescCause">Loading...</p>
+            </div>
+
+            <div class="temp-card">
+                <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
+                <h3 class="card-title" id="cardTitleAction">Cara Mengatasi</h3>
+                <p class="card-desc" id="cardDescAction">Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="landing-footer">
+        <p>@TerraShift. All rights reserved.</p>
+    </footer>
+</main>
+</div>
+
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'id',
+        includedLanguages: 'id,en',
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="navbar2.js"></script>
+<script src="oceanacid.js"></script>
+<script src="oceanacidcontent.js"></script>
+</body>
+</html>
