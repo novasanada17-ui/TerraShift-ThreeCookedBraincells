@@ -133,12 +133,11 @@
 .sun-inner {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background-image: url('assets/images/forestfire.png');
+  background-image: url('assets/images/tree.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  filter: drop-shadow(0 0 40px rgba(217, 119, 6, 0.85));
+  filter: drop-shadow(0 0 40px rgba(16, 138, 12, 0.85));
   animation: sunPulse 4s ease-in-out infinite alternate;
 }
 
